@@ -15,3 +15,31 @@ can run the program with cargo run, it will also build then run
 "cargo check" will check to see if the program would compile but doesn't make an executable
 
 when ready for realease build with "cargo build --realease" to get optimisations
+
+to import things "use" is the keyword
+
+"let" is the keyword to say that this is a var. Variables are immutable by default, so using the keyword "mut" after let will let it be mutable
+
+"::new" indicates that new is an asscoiated function of the String type, this is known in other languages as a Static method
+
+calling functions from stdin() 
+    "io::stdin()
+        .read_line(x d)
+        .expec()
+    "
+& is a reference, and are immutable by defult
+&mut guess - gives a mutable reference called guess
+
+can do multiple lines for a function call for readability
+
+adding to the Cargo.toml file dependancies will download and add to the project next time it is built
+
+changing the Cargo.lock file is the only way to update the downloaded dependancies so nothing breaks.
+
+update the dependancies to the latest automatically by running "cargo update"
+
+"Ordering" is an enum and can have 3 possible outputs
+
+Rust has type inferencing so be careful when comparing
+
+shadowing allows the reassigning of vars like if you want to make a string int into an actual int
