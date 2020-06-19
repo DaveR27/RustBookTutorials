@@ -1,0 +1,17 @@
+functions have the keyword fn
+
+compile with rustc for small programs
+
+! at the end of a function name is a macro instead of a function
+
+best way to start a new project is with "cargo new 'x'"
+
+build with cargo for bigger projects, sit in top level directory and run "cargo build"
+
+cargo.lock keeps track of the versions of dependancies for the project
+
+can run the program with cargo run, it will also build then run
+
+"cargo check" will check to see if the program would compile but doesn't make an executable
+
+when ready for realease build with "cargo build --realease" to get optimisations
