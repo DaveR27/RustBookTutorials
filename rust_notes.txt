@@ -43,3 +43,100 @@ update the dependancies to the latest automatically by running "cargo update"
 Rust has type inferencing so be careful when comparing
 
 shadowing allows the reassigning of vars like if you want to make a string int into an actual int
+
+to declare constants use const instead of let when declaring the var
+
+shadowing is when you redeclare a var with the same function name
+"let x = 5; let x = x + 1"
+
+statically typed language
+
+i - signed int
+u - unsigned int
+
+math functions the same as c
+
+bool is the keyword for Boolean
+
+single quote char, double quote string
+
+tuple can have multiple types, arrays cannot
+
+specific array declaration:
+"let a: [i32; 5] = [1,2,3,4,5]
+
+snake case is the convention
+
+declare the type of the var being given to each function
+
+has short hand i++
+
+Expression based language
+    - Statements cannot return values ie
+        -- let x = (let y = 6) // causes an error and isn't allowed
+
+Returning from a function
+    - (-> type) needs to be the last thing before {
+    - no return keyword needed if the last thing in the function is the
+        wanted value
+    - can return early from a function by using the return keyword
+    - putting a semicolon at the end of an expression can change it to a
+        statement. So when returning from a function, do not put a semi-
+        colon at the end.
+
+Control Flow
+    - don't need brackets around if boolean statement
+    - else if optional
+    - can use an if to assign to a var
+    - while, for and loop
+    - for ele in a.iter()
+    - for number in (1..4).rec() 
+
+Ownership
+    - All data stored on the stack must have a known, fixed size.
+        Data with an unknown size at compile time or a size that 
+        might change must be stored on the heap instead. 
+    - Putting on the stack is faster
+    - Getting data off the heap is slower cause you have to follow a pointer
+        The heap is less organized
+    - Memory is automatically returned when something falls out of scope,
+        this is a different approach from having a garbage collector or
+        using allocate or free.
+    - stack calls a value will just be copied to the other var with
+        "let x = 5; = let y = x". But with heap calls the pointer gets
+        moved to the new var and x is freed/drop and y would be the 
+        only thing that references the original object on the heap.
+        This is similar to shallow copying in java, but it will rm the
+        original var.
+    - Deep clone have to be explicitly called with x.clone()
+    - copy trait are the things that will automatically deep clone which
+        are stack things like ints and bool. If something has a drop trait
+        like on the heap it will only shallow copy.
+    - Passing a var into a function will change its scope to just the function
+        that it is passed into, and thefore removing it from the outside
+        function. It is transfering ownership, so to get it back it has to
+        get returned again. or a work around would be to use references.    
+
+References
+    - &type
+    - fn example(s: &String)
+    - using a reference allows you to refer to a value without transfering
+        ownership
+    - you dereference something by using *
+    - can edit something at the end of a reference in a function if you
+        make that var mut and pass a mut reference to the function
+    - 2 vars cannot have the same mut reference, but they can have the same
+        reference
+    - cannot have mut and non-mut references, multiple non-mut is fine though
+    - if you have a reference to some data, the compiler will ensure
+        that the data will not go out of scope before the reference to 
+        the data does.
+
+String (on heap)
+    - let s = String::from("hello");
+    - mutable
+        The heap is less organized
+
+Slice
+    - reference part of a string
+    - &s[0..5] == [0,5)
