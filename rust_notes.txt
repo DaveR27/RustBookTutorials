@@ -140,3 +140,26 @@ String (on heap)
 Slice
     - reference part of a string
     - &s[0..5] == [0,5)
+
+Struct
+    - use the dot notation to access things within the struct
+    - entire thing must be marked as mut otherwise it will not be able to
+        change it, you cannot mark certain fields as mut
+    - Having a function and inputing vals into a struct you can short hand
+        and not have email: email
+    - updating struct values from another instanct has a shorthand
+        "email: String::from("example@uq"),
+        username: String::from("anotheruser"),
+        ..user1"
+    - tuple structs, use .indexVal to access parts
+    - Using lifetimes is how you keep ownership alive for as long as the 
+        struct is
+    - putting :? in the {} when println! will put it in debug form
+        and you also have to put #[derive(Debug)] above struct or you can
+        use {:#?}
+    - self is always the first parameter in a method
+    - impl stuct_name {} is how you write a method
+    - you can write functions that are associated with the struct that but
+        don't have &self, often used as constructors that return a new
+        instance of the struct, for associated functions :: is used to call
+        for methods . is used. 
