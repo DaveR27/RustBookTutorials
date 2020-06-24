@@ -163,3 +163,30 @@ Struct
         don't have &self, often used as constructors that return a new
         instance of the struct, for associated functions :: is used to call
         for methods . is used. 
+
+Enums and pattern matching:
+    - Good for things when they can be one thing or another, like an
+        IP address it can be v6 of v4. Similar to option in haskell
+    - like a struct set up but keyword is enum
+    - can define type like in a struct by var(type),
+    - can define methods for them like structs
+    - Option<T> is in prelude = Some(T) | None
+    - compiler cannot infer type on option
+
+match keyword
+    - match is the same as pattern matching in haskell, makes sure
+        all the bases are covered
+    - pattern matching like if, but if has to return a bool value, match
+        doesn't
+    - instead of -> on match like in haskell it is => 
+    - if let is a way to do match if you only want to match on one case and
+        ignore the rest
+    - Sytax of the matching:
+            "    let some_u8_value = Some(0u8);
+        match some_u8_value {
+            Some(3) => println!("three"),
+            _ => (),
+        } "
+                "if let Some(3) = some_u8_value {
+            println!("three");
+        } "
