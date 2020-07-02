@@ -190,3 +190,31 @@ match keyword
                 "if let Some(3) = some_u8_value {
             println!("three");
         } "
+
+Packages and Creates
+    - Can use same name as a crate because when you use a create you have
+        to refer to it as like rand::Rng
+    - A crate is a binary or library, the create root is where the compiler
+        starts from to make up the module of the create.
+    - A package is one or more crates that provide function and contains
+        a Cargo.toml file that describes how to build those crates.
+    - A package must contain zero or one library creates and no more, it
+        can contain as many binary crates as needed, but it must contain
+        at least one crate.
+    - mod is the keyword for a module
+    - Path
+        . An absolute path starts from a crate root by using a crate name 
+            or a literal crate.
+        . A relative path starts from the current module and uses self, 
+            super, or an identifier in the current module
+    - public and private functions, everything is private by default,
+        use pub to make it public
+    - call relative paths using super which is the same as .. in a file
+        system
+    - for a struct pub will make it public but you need to also put it on
+        on the fields because they are still private
+    - if you put pub on an enum then everything in there is going to public
+    - you can use use keyword bring the module into scope like in python
+        so you don't have to write the whole path everytime. and bring
+        everything in with the * operator.
+        - use std::{cmp::Ordering, io};
